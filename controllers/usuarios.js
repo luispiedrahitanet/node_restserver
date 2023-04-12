@@ -26,7 +26,7 @@ const usuariosGet = async (req = request, res = response) => {
     //===> Enviando array de promesas; estandar de javascript <===
     const resp = await Promise.all(
         [
-            Usuario.count( filtro ),
+            Usuario.countDocuments( filtro ),
             Usuario.find( filtro )
                     .skip( Number(desde) )
                     .limit( Number(limite) )
