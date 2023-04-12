@@ -1,0 +1,21 @@
+10  Autenticación de usuario - JWT.zip
+    10. Proteger rutas mediante uso de Token - Middlewares.mp4
+
+
+=====================================
+Crear el pakage.json
+    npmp init -y
+
+Instalar dependencias
+    npm i express
+    npm i dotenv
+    npm i cors          ==> Controlar accesos a las peticiones http a los dominios entrantes
+    npm i mongoose
+    npm i bcryptjs      ==> Cifrar las contraseñas
+    npm i express-validator
+    npm i jsonwebtoken  ==> JWT
+====================================
+
+request.body    ===> Datos que vienen en el body
+request.param   ===> Datos que vienen en la ruta separdos por '/'
+request.query   ===> Datos que vienen en la ruta tipo consulta (q=hola&nombre=Luis&edad=45)
