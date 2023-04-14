@@ -5,11 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Signin</title>
-    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
 </head>
 <body>
     
-    <h1>Google Signin</h1>
+	<div style="font-family: Arial; margin: 10px; padding: 10px ;border: solid gray 1px">
+		<strong>Webapp Nodejs</strong>
+		<br><strong>Autor:</strong> Luis Piedrahita
+		<br><strong>Email:</strong> luispiedrahita@gmail.com
+	</div>
+
+
+    <h3>Google Signin</h3>
     <hr>
 
 
@@ -19,7 +25,7 @@
 
 		var url = ( window.location.hostname.includes('localhost') )
 					? 'http://localhost:8080/api/auth/google'
-					: '<mi_servidor_en_pruduccion>/api/auth/google'
+					: 'https://node-restserver.azurewebsites.net/api/auth/google'
 
 
         function handleCredentialResponse(response) {
