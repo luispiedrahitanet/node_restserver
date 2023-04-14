@@ -4,11 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso denegado</title>
+    <title>Google Signin</title>
+    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
 </head>
 <body>
     
-    <h1>Acceso denegado</h1>
+    <h1>Google Signin</h1>
+    <hr>
+
+
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
+      
+	  <script>
+
+		var url = ( window.location.hostname.includes('localhost') )
+					? 'http://localhost:8080/api/auth/google'
+					: '<mi_servidor_en_pruduccion>/api/auth/google'
+
+
+        function handleCredentialResponse(response) {
+			const id_token = response.credential;
+			console.log("Encoded JWT ID token: " + id_token);
+
+			const data = { id_token }
+			fetch( url, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify( data)
+			})
+			.then( resp => resp.json() )
+			.then( data => console.log( 'Nuestro server', data ) )
+			.catch( console.log )
+        }
+
+		// function onSignout() {
+		// 	google.accounts.id.disableAutoSelect();
+		// }
+
+        window.onload = function () {
+          google.accounts.id.initialize({
+            client_id: "418826849135-9ko58i9qk4le1vvb875s6ee348id8bcf.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+          });
+          google.accounts.id.renderButton(
+            document.getElementById("buttonDiv"),
+            { theme: "filled_blue", size: "medium", type: "standard", shape: "pill" }  // customization attributes
+          );
+          google.accounts.id.prompt(); // also display the One Tap dialog
+        }
+    </script>
+
+    <div id="buttonDiv"></div> 
+ 
+
+
+	<!-- <script>
+		function googleU(googleUser){
+			console.log(googleUser);
+		}
+	</script> -->
 
 </body>
 </html>

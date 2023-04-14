@@ -1,5 +1,5 @@
-10  Autenticación de usuario - JWT.zip
-    10. Proteger rutas mediante uso de Token - Middlewares.mp4
+12  Categorías y Productos.zip
+    4. CRUD y rutas de Categorías.mp4
 
 
 =====================================
@@ -9,12 +9,22 @@ Crear el pakage.json
 Instalar dependencias
     npm i express
     npm i dotenv
-    npm i cors          ==> Controlar accesos a las peticiones http a los dominios entrantes
+    npm i cors                              ==> Controlar accesos a las peticiones http a los dominios entrantes
     npm i mongoose
-    npm i bcryptjs      ==> Cifrar las contraseñas
+    npm i bcryptjs                          ==> Cifrar las contraseñas
     npm i express-validator
     npm i jsonwebtoken  ==> JWT
+    npm install google-auth-library --save  ==> Librería Google API Client
 ====================================
+
+
+https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid
+https://developers.google.com/identity/gsi/web/reference/js-reference
+Mostrar el botón para acceder:
+https://developers.google.com/identity/gsi/web/guides/display-button?hl=es-419#javascript
+Verificar el Token:
+https://developers.google.com/identity/gsi/web/guides/verify-google-id-token?hl=es-419
+
 
 request.body    ===> Datos que vienen en el body
 request.param   ===> Datos que vienen en la ruta separdos por '/'
